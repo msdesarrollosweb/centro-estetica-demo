@@ -1,0 +1,11 @@
+<svg width="160" height="160" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Logo Aura Bella</title>
+  <desc id="desc">Monograma floral cálido para centro de estética Aura Bella</desc>
+  <rect width="160" height="160" rx="46" fill="#FFF8F3"/>
+  <circle cx="80" cy="80" r="58" fill="#F4D2BD"/>
+  <path d="M80 31C95 48 102 63 101 78C100 96 89 110 80 125C71 110 60 96 59 78C58 63 65 48 80 31Z" fill="#B86B57"/>
+  <path d="M42 76C61 66 77 66 90 76C104 87 110 102 118 121C98 116 82 113 68 102C55 92 48 82 42 76Z" fill="#D9A97E" fill-opacity="0.92"/>
+  <path d="M118 76C99 66 83 66 70 76C56 87 50 102 42 121C62 116 78 113 92 102C105 92 112 82 118 76Z" fill="#7E3F31" fill-opacity="0.86"/>
+  <circle cx="80" cy="80" r="15" fill="#FFF8F3"/>
+  <path d="M74 88L80 66L86 88H81L80 83L79 88H74Z" fill="#7E3F31"/>
+</svg>
