@@ -1,16 +1,12 @@
 'use strict';
 
-const WHATSAPP_NUMBER = '541127549094';
-
 const header = document.querySelector('[data-header]');
 const menuToggle = document.querySelector('[data-menu-toggle]');
 const navLinks = document.querySelector('[data-nav-links]');
 const reveals = document.querySelectorAll('.reveal');
-const bookingForm = document.querySelector('[data-booking-form]');
-const formStatus = document.querySelector('[data-form-status]');
-const testimonialTrack = document.querySelector('[data-testimonial-track]');
-const testimonialPrev = document.querySelector('[data-testimonial-prev]');
-const testimonialNext = document.querySelector('[data-testimonial-next]');
+const galleryButtons = document.querySelectorAll('[data-image]');
+const lightbox = document.querySelector('[data-lightbox]');
+const lightboxImg = document.querySelector('[data-lightbox-img]');
 
 const setScrolledHeader = () => {
   header?.classList.toggle('is-scrolled', window.scrollY > 12);
@@ -21,71 +17,108 @@ setScrolledHeader();
 
 menuToggle?.addEventListener('click', () => {
   const isOpen = navLinks?.classList.toggle('is-open');
-  menuToggle.classList.toggle('is-open', Boolean(isOpen));
   menuToggle.setAttribute('aria-expanded', String(Boolean(isOpen)));
 });
 
 navLinks?.addEventListener('click', (event) => {
   if (event.target instanceof HTMLAnchorElement) {
     navLinks.classList.remove('is-open');
-    menuToggle?.classList.remove('is-open');
     menuToggle?.setAttribute('aria-expanded', 'false');
   }
 });
 
-if ('IntersectionObserver' in window) {
-  const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('is-visible');
-        revealObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.14 });
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('is-visible');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.14 });
 
-  reveals.forEach((item) => revealObserver.observe(item));
-} else {
-  reveals.forEach((item) => item.classList.add('is-visible'));
-}
+reveals.forEach((item) => revealObserver.observe(item));
 
-const scrollTestimonials = (direction) => {
-  if (!testimonialTrack) return;
-  const distance = testimonialTrack.clientWidth * 0.9;
-  testimonialTrack.scrollBy({ left: direction * distance, behavior: 'smooth' });
+galleryButtons.forEach((button) => {
+  button.addEventListener('click', () => {
+    const image = button.getAttribute('data-image');
+    if (!image || !lightbox || !lightboxImg) return;
+    lightboxImg.src = image;
+    lightbox.hidden = false;
+    document.body.style.overflow = 'hidden';
+  });
+});
+
+const closeLightbox = () => {
+  if (!lightbox || !lightboxImg) return;
+  lightbox.hidden = true;
+  lightboxImg.src = '';
+  document.body.style.overflow = '';
 };
 
-testimonialPrev?.addEventListener('click', () => scrollTestimonials(-1));
-testimonialNext?.addEventListener('click', () => scrollTestimonials(1));
-
-const sanitizeValue = (value) => String(value || '').replace(/[<>]/g, '').trim();
-
-bookingForm?.addEventListener('submit', (event) => {
-  event.preventDefault();
-
-  if (!bookingForm.checkValidity()) {
-    bookingForm.reportValidity();
-    if (formStatus) formStatus.textContent = 'Completá los campos obligatorios para continuar.';
-    return;
-  }
-
-  const data = new FormData(bookingForm);
-  const nombre = sanitizeValue(data.get('nombre'));
-  const telefono = sanitizeValue(data.get('telefono'));
-  const email = sanitizeValue(data.get('email')) || 'No informado';
-  const tratamiento = sanitizeValue(data.get('tratamiento'));
-  const fecha = sanitizeValue(data.get('fecha'));
-  const horario = sanitizeValue(data.get('horario'));
-  const mensaje = sanitizeValue(data.get('mensaje')) || 'Sin mensaje adicional';
-
-  const text = `Hola Aura Bella, quiero reservar un turno.%0A%0A` +
-    `Nombre: ${encodeURIComponent(nombre)}%0A` +
-    `Teléfono: ${encodeURIComponent(telefono)}%0A` +
-    `Email: ${encodeURIComponent(email)}%0A` +
-    `Tratamiento: ${encodeURIComponent(tratamiento)}%0A` +
-    `Fecha preferida: ${encodeURIComponent(fecha)}%0A` +
-    `Horario preferido: ${encodeURIComponent(horario)}%0A` +
-    `Consulta: ${encodeURIComponent(mensaje)}`;
-
-  if (formStatus) formStatus.textContent = 'Abriendo WhatsApp para confirmar tu consulta...';
-  window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${text}`, '_blank', 'noopener,noreferrer');
+lightbox?.addEventListener('click', closeLightbox);
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape' && lightbox && !lightbox.hidden) closeLightbox();
 });
+
+// Carrusel accesible para la sección de opiniones.
+const testimonialTrack = document.querySelector('[data-testimonial-track]');
+const testimonialPrev = document.querySelector('[data-testimonial-prev]');
+const testimonialNext = document.querySelector('[data-testimonial-next]');
+const testimonialDots = document.querySelector('[data-testimonial-dots]');
+let testimonialIndex = 0;
+
+const getVisibleTestimonials = () => {
+  if (window.matchMedia('(max-width: 620px)').matches) return 1;
+  if (window.matchMedia('(max-width: 980px)').matches) return 2;
+  return 3;
+};
+
+const renderTestimonialDots = () => {
+  if (!testimonialTrack || !testimonialDots) return;
+  const total = testimonialTrack.children.length;
+  const maxIndex = Math.max(0, total - getVisibleTestimonials());
+  testimonialDots.innerHTML = '';
+  for (let i = 0; i <= maxIndex; i += 1) {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.setAttribute('aria-label', `Ver grupo de opiniones ${i + 1}`);
+    button.addEventListener('click', () => {
+      testimonialIndex = i;
+      updateTestimonials();
+    });
+    testimonialDots.appendChild(button);
+  }
+};
+
+const updateTestimonials = () => {
+  if (!testimonialTrack || !testimonialDots) return;
+  const visible = getVisibleTestimonials();
+  const total = testimonialTrack.children.length;
+  const maxIndex = Math.max(0, total - visible);
+  testimonialIndex = Math.min(Math.max(testimonialIndex, 0), maxIndex);
+  const firstCard = testimonialTrack.children[0];
+  const gap = 22;
+  const cardWidth = firstCard ? firstCard.getBoundingClientRect().width : 0;
+  testimonialTrack.style.transform = `translateX(-${testimonialIndex * (cardWidth + gap)}px)`;
+  testimonialDots.querySelectorAll('button').forEach((button, index) => {
+    button.classList.toggle('active', index === testimonialIndex);
+  });
+};
+
+testimonialPrev?.addEventListener('click', () => {
+  testimonialIndex -= 1;
+  updateTestimonials();
+});
+
+testimonialNext?.addEventListener('click', () => {
+  testimonialIndex += 1;
+  updateTestimonials();
+});
+
+window.addEventListener('resize', () => {
+  renderTestimonialDots();
+  updateTestimonials();
+}, { passive: true });
+
+renderTestimonialDots();
+updateTestimonials();

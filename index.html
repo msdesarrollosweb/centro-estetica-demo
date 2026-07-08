@@ -3,14 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Aura Bella Estética Avanzada: tratamientos faciales, corporales, depilación definitiva y turnos personalizados por WhatsApp." />
+  <meta name="description" content="Aura Bella Estética Integral: tratamientos faciales, corporales y depilación definitiva en un espacio moderno, cálido y profesional." />
   <meta name="theme-color" content="#B86B57" />
   <meta name="robots" content="index, follow" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
 
-  <title>Aura Bella | Estética Avanzada</title>
+  <title>Aura Bella | Centro de Estética Integral</title>
 
-  <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
+  <link rel="preconnect" href="https://images.unsplash.com" />
   <link rel="stylesheet" href="styles.css" />
   <script defer src="script.js"></script>
 </head>
@@ -20,7 +21,7 @@
   <header class="site-header" data-header>
     <nav class="navbar container" aria-label="Navegación principal">
       <a href="#inicio" class="brand" aria-label="Aura Bella Inicio">
-        <img src="logo-aura-bella.svg" alt="Logo Aura Bella" class="brand-logo" width="52" height="52" />
+        <img src="logo-aura-bella.svg" alt="Logo Aura Bella" class="brand-logo" />
         <span>Aura Bella</span>
       </a>
 
@@ -29,41 +30,46 @@
       </button>
 
       <ul class="nav-links" data-nav-links>
-        <li><a href="#servicios">Tratamientos</a></li>
-        <li><a href="#experiencia">Sobre nosotros</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#experiencia">Experiencia</a></li>
+        <li><a href="#galeria">Galería</a></li>
         <li><a href="#testimonios">Opiniones</a></li>
-        <li><a href="#turnos">Reservar turno</a></li>
+        <li><a href="#turnos">Turnos</a></li>
         <li><a href="#contacto">Contacto</a></li>
       </ul>
+
+      <a class="nav-cta" href="https://wa.me/541127549094?text=Hola%20Aura%20Bella%2C%20quiero%20reservar%20un%20turno" target="_blank" rel="noopener noreferrer">Reservar</a>
     </nav>
   </header>
 
   <main id="main">
-    <section class="hero" id="inicio" aria-labelledby="hero-title">
+    <section class="hero section" id="inicio" aria-label="Presentación Aura Bella">
       <div class="hero-overlay"></div>
       <div class="container hero-grid">
         <div class="hero-content reveal">
-          <p class="eyebrow">Estética avanzada & bienestar</p>
-          <h1 id="hero-title">Experiencia distinta para realzar tu belleza natural</h1>
-          <p class="hero-text">Tratamientos estéticos personalizados, tecnología profesional y un ambiente cálido para que te sientas acompañada desde el primer momento.</p>
+          <p class="eyebrow">Estética integral & bienestar</p>
+          <h1>Experiencia distinta para realzar tu belleza natural</h1>
+          <p class="hero-text">
+            Tratamientos estéticos personalizados, tecnología profesional y un ambiente cálido pensado para que te sientas cómoda desde el primer momento.
+          </p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#turnos">Reservar turno</a>
+            <a class="btn btn-primary" href="https://wa.me/541127549094?text=Hola%20Aura%20Bella%2C%20quiero%20reservar%20un%20turno" target="_blank" rel="noopener noreferrer">Reservar turno</a>
             <a class="btn btn-secondary" href="#servicios">Ver tratamientos</a>
           </div>
         </div>
 
-        <div class="hero-stats reveal" aria-label="Indicadores destacados">
+        <div class="hero-stats reveal" aria-label="Indicadores de confianza">
           <article class="stat-card">
-            <span class="stat-icon" aria-hidden="true">👥</span>
-            <div><strong>+500</strong><span>pacientes atendidas</span></div>
+            <span class="stat-icon">👥</span>
+            <div><strong>+500</strong><p>pacientes atendidas</p></div>
           </article>
           <article class="stat-card">
-            <span class="stat-icon" aria-hidden="true">★</span>
-            <div><strong>4.9★</strong><span>experiencia promedio</span></div>
+            <span class="stat-icon">★</span>
+            <div><strong>4.9★</strong><p>experiencia promedio</p></div>
           </article>
           <article class="stat-card">
-            <span class="stat-icon" aria-hidden="true">✓</span>
-            <div><strong>100%</strong><span>atención personalizada</span></div>
+            <span class="stat-icon">✓</span>
+            <div><strong>100%</strong><p>atención personalizada</p></div>
           </article>
         </div>
       </div>
@@ -71,57 +77,56 @@
 
     <section class="section services" id="servicios">
       <div class="container">
-        <div class="section-heading centered reveal">
+        <div class="section-heading reveal">
           <p class="eyebrow">Nuestros servicios</p>
           <h2>Tratamientos pensados para vos</h2>
-          <p>Protocolos diseñados según tu piel, tus objetivos y el resultado que querés lograr.</p>
+          <p>Seleccionamos cada protocolo según tu piel, tus objetivos y tu ritmo de vida.</p>
         </div>
 
-        <div class="cards-grid">
-          <article class="service-card reveal">
-            <span class="icon">💆‍♀️</span>
-            <h3>Limpieza facial profunda</h3>
-            <p>Renová tu piel con higiene, exfoliación, extracción y máscara nutritiva.</p>
+        <div class="service-showcase">
+          <article class="service-card reveal featured-service">
+            <div class="service-media" aria-hidden="true"><img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=700&q=80" alt="" loading="lazy" /></div>
+            <div class="service-body">
+              <span class="icon">💆‍♀️</span>
+              <span class="service-tag">Facial</span>
+              <h3>Limpieza facial profunda</h3>
+              <p>Higiene, exfoliación, extracción y máscara nutritiva para una piel más luminosa y fresca.</p>
+              <a href="#turnos" class="service-link">Reservar tratamiento</a>
+            </div>
           </article>
-          <article class="service-card reveal">
-            <span class="icon">✨</span>
-            <h3>Depilación definitiva</h3>
-            <p>Sesiones progresivas para una piel más suave y cómoda durante todo el año.</p>
+          <article class="service-card reveal featured-service">
+            <div class="service-media" aria-hidden="true"><img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=700&q=80" alt="" loading="lazy" /></div>
+            <div class="service-body">
+              <span class="icon">✨</span>
+              <span class="service-tag">Tecnología</span>
+              <h3>Depilación definitiva</h3>
+              <p>Sesiones progresivas para una piel más suave, cómoda y lista durante todo el año.</p>
+              <a href="#turnos" class="service-link">Consultar disponibilidad</a>
+            </div>
           </article>
-          <article class="service-card reveal">
-            <span class="icon">🌿</span>
-            <h3>Tratamientos antiage</h3>
-            <p>Protocolos faciales para mejorar luminosidad, textura y firmeza.</p>
-          </article>
-          <article class="service-card reveal">
-            <span class="icon">💎</span>
-            <h3>Estética corporal</h3>
-            <p>Masajes, modelación y aparatología para acompañar tus objetivos.</p>
-          </article>
-          <article class="service-card reveal">
-            <span class="icon">🧴</span>
-            <h3>Peeling & renovación</h3>
-            <p>Ideal para manchas, poros, textura irregular y piel apagada.</p>
-          </article>
-          <article class="service-card reveal">
-            <span class="icon">🕯️</span>
-            <h3>Rituales relax</h3>
-            <p>Un momento de calma para bajar el estrés y reconectar con vos.</p>
-          </article>
+        </div>
+
+        <div class="cards-grid compact-services">
+          <article class="service-card reveal"><span class="icon">🌿</span><h3>Tratamientos antiage</h3><p>Protocolos faciales para mejorar luminosidad, textura y firmeza.</p></article>
+          <article class="service-card reveal"><span class="icon">💎</span><h3>Estética corporal</h3><p>Masajes, modelación y aparatología para acompañar tus objetivos corporales.</p></article>
+          <article class="service-card reveal"><span class="icon">🧴</span><h3>Peeling & renovación</h3><p>Ideal para manchas, poros, textura irregular y piel apagada.</p></article>
+          <article class="service-card reveal"><span class="icon">🕯️</span><h3>Rituales relax</h3><p>Un momento de calma para bajar el estrés y reconectar con vos.</p></article>
         </div>
       </div>
     </section>
 
-    <section class="section experience" id="experiencia">
-      <div class="container split-grid">
-        <div class="image-stack reveal">
-          <img class="img-main" src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=900&q=80" alt="Cabina moderna de estética" loading="lazy" width="900" height="700" />
-          <img class="img-small" src="https://images.unsplash.com/photo-1596178060810-72f53ce9a65c?auto=format&fit=crop&w=600&q=80" alt="Productos cosméticos profesionales" loading="lazy" width="600" height="420" />
+    <section class="section experience fixed-section" id="experiencia">
+      <div class="container split-grid glass-panel">
+        <div class="image-stack reveal float-soft">
+          <img class="img-main" src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=900&q=80" alt="Cabina moderna de estética" loading="lazy" />
+          <img class="img-small" src="https://images.unsplash.com/photo-1596178060810-72f53ce9a65c?auto=format&fit=crop&w=600&q=80" alt="Productos cosméticos profesionales" loading="lazy" />
         </div>
         <div class="split-content reveal">
           <p class="eyebrow">Experiencia Aura Bella</p>
           <h2>Un espacio cálido, profesional y seguro</h2>
-          <p>Cuidamos cada detalle: diagnóstico inicial, protocolos personalizados, higiene, privacidad y seguimiento posterior.</p>
+          <p>
+            Cuidamos cada detalle: diagnóstico inicial, protocolos personalizados, higiene, privacidad y seguimiento posterior.
+          </p>
           <ul class="check-list">
             <li>Profesionales capacitadas</li>
             <li>Equipamiento moderno</li>
@@ -133,35 +138,87 @@
       </div>
     </section>
 
-    <section class="section testimonials" id="testimonios">
+    <section class="section gallery" id="galeria">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Galería</p>
+          <h2>Ambiente, cuidado y resultados</h2>
+        </div>
+
+        <div class="gallery-grid" aria-label="Galería de imágenes">
+          <button class="gallery-item reveal" type="button" data-image="https://images.unsplash.com/photo-1552693673-1bf958298935?auto=format&fit=crop&w=1200&q=80" aria-label="Ver imagen de recepción estética">
+            <img src="https://images.unsplash.com/photo-1552693673-1bf958298935?auto=format&fit=crop&w=700&q=80" alt="Recepción elegante de estética" loading="lazy" />
+          </button>
+          <button class="gallery-item reveal" type="button" data-image="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=1200&q=80" aria-label="Ver imagen de cosmética profesional">
+            <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=700&q=80" alt="Cosmética profesional" loading="lazy" />
+          </button>
+          <button class="gallery-item reveal" type="button" data-image="https://images.unsplash.com/photo-1600334129128-685c5582fd35?auto=format&fit=crop&w=1200&q=80" aria-label="Ver imagen de masaje relajante">
+            <img src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?auto=format&fit=crop&w=700&q=80" alt="Masaje relajante" loading="lazy" />
+          </button>
+          <button class="gallery-item reveal" type="button" data-image="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=1200&q=80" aria-label="Ver imagen de cuidado facial">
+            <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=700&q=80" alt="Cuidado facial estético" loading="lazy" />
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section testimonials fixed-section-soft" id="testimonios">
       <div class="container">
         <div class="section-heading centered reveal">
           <p class="eyebrow">Opiniones</p>
           <h2>Lo que dicen nuestras pacientes</h2>
-          <p>Historias reales de personas que confiaron en nuestro equipo.</p>
+          <p>Historias reales de atención, cuidado y confianza.</p>
         </div>
 
-        <div class="testimonial-wrap reveal">
-          <button class="testimonial-nav" type="button" aria-label="Opinión anterior" data-testimonial-prev>‹</button>
-          <div class="testimonial-grid" data-testimonial-track>
-            <article class="testimonial">
-              <div class="stars" aria-label="5 estrellas">★★★★★</div>
-              <p>“Me encantó el tratamiento facial. La atención fue increíble desde el primer momento.”</p>
-              <div class="testimonial-author"><span>ML</span><div><strong>María L.</strong><small>Limpieza facial</small></div></div>
-            </article>
-            <article class="testimonial">
-              <div class="stars" aria-label="5 estrellas">★★★★★</div>
-              <p>“Profesionales excelentes, resultados visibles y un ambiente muy relajante.”</p>
-              <div class="testimonial-author"><span>CR</span><div><strong>Carolina R.</strong><small>Radiofrecuencia</small></div></div>
-            </article>
-            <article class="testimonial">
-              <div class="stars" aria-label="5 estrellas">★★★★★</div>
-              <p>“Súper recomendable, me ayudaron a mejorar mi piel y mi autoestima.”</p>
-              <div class="testimonial-author"><span>JM</span><div><strong>Julieta M.</strong><small>Tratamiento antiage</small></div></div>
-            </article>
+        <div class="testimonial-shell reveal" data-testimonials>
+          <button class="testimonial-arrow" type="button" aria-label="Opinión anterior" data-testimonial-prev>‹</button>
+          <div class="testimonial-viewport" aria-live="polite">
+            <div class="testimonial-track" data-testimonial-track>
+              <article class="testimonial">
+                <div class="stars">★★★★★</div>
+                <p>“Me encantó el tratamiento facial, la atención fue increíble desde el primer momento.”</p>
+                <div class="patient">
+                  <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=120&q=80" alt="Foto de María L." loading="lazy" />
+                  <div><strong>María L.</strong><span>Tratamiento facial</span></div>
+                </div>
+              </article>
+              <article class="testimonial">
+                <div class="stars">★★★★★</div>
+                <p>“Profesionales excelentes, resultados visibles y un ambiente muy relajante.”</p>
+                <div class="patient">
+                  <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&q=80" alt="Foto de Carolina R." loading="lazy" />
+                  <div><strong>Carolina R.</strong><span>Radiofrecuencia</span></div>
+                </div>
+              </article>
+              <article class="testimonial">
+                <div class="stars">★★★★★</div>
+                <p>“Súper recomendable, me ayudaron a mejorar mi piel y sentirme más segura.”</p>
+                <div class="patient">
+                  <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80" alt="Foto de Julieta M." loading="lazy" />
+                  <div><strong>Julieta M.</strong><span>Limpieza profunda</span></div>
+                </div>
+              </article>
+              <article class="testimonial">
+                <div class="stars">★★★★★</div>
+                <p>“El lugar transmite mucha calma. Me explicaron todo y salí feliz con el resultado.”</p>
+                <div class="patient">
+                  <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=120&q=80" alt="Foto de Sofía A." loading="lazy" />
+                  <div><strong>Sofía A.</strong><span>Peeling & renovación</span></div>
+                </div>
+              </article>
+              <article class="testimonial">
+                <div class="stars">★★★★★</div>
+                <p>“Muy buena atención, puntualidad y seguimiento después del tratamiento.”</p>
+                <div class="patient">
+                  <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=120&q=80" alt="Foto de Paula G." loading="lazy" />
+                  <div><strong>Paula G.</strong><span>Depilación definitiva</span></div>
+                </div>
+              </article>
+            </div>
           </div>
-          <button class="testimonial-nav" type="button" aria-label="Opinión siguiente" data-testimonial-next>›</button>
+          <button class="testimonial-arrow" type="button" aria-label="Opinión siguiente" data-testimonial-next>›</button>
         </div>
+        <div class="dots" aria-label="Indicadores de opiniones" data-testimonial-dots></div>
       </div>
     </section>
 
@@ -170,56 +227,76 @@
         <div class="booking-copy reveal">
           <p class="eyebrow">Reservá tu turno</p>
           <h2>Tu momento, tu mejor versión</h2>
-          <p>Elegí el tratamiento que más te interese y dejanos tus datos. Te contactamos para confirmar disponibilidad.</p>
-          <ul class="booking-benefits">
-            <li><span>📅</span><div><strong>Elegí día y horario</strong><small>Coordinación flexible por WhatsApp</small></div></li>
-            <li><span>🤍</span><div><strong>Atención personalizada</strong><small>Adaptada a tus necesidades</small></div></li>
-            <li><span>✨</span><div><strong>Resultados que se notan</strong><small>Belleza real, desde tu esencia</small></div></li>
-          </ul>
+          <p>Elegí el tratamiento que más te guste y reservá de forma rápida y sencilla.</p>
+
+          <div class="booking-benefits">
+            <div><span>📅</span><div><strong>Elegí día y horario</strong><p>Disponibilidad actualizada.</p></div></div>
+            <div><span>👩‍⚕️</span><div><strong>Atención personalizada</strong><p>Adaptada a tus necesidades.</p></div></div>
+            <div><span>🤎</span><div><strong>Resultados que se notan</strong><p>Belleza real, desde tu esencia.</p></div></div>
+          </div>
         </div>
 
-        <form class="booking-form reveal" data-booking-form novalidate>
+        <form class="booking-form reveal" action="https://wa.me/541127549094" method="get" target="_blank" rel="noopener noreferrer">
           <h3>Reservar turno</h3>
           <div class="form-row">
-            <label><span>Nombre completo</span><input type="text" name="nombre" autocomplete="name" minlength="2" required /></label>
-            <label><span>Teléfono</span><input type="tel" name="telefono" autocomplete="tel" inputmode="tel" required /></label>
+            <label><span>Nombre completo</span><input type="text" name="nombre" autocomplete="name" placeholder="Nombre completo" required maxlength="80" /></label>
+            <label><span>Teléfono</span><input type="tel" name="telefono" autocomplete="tel" placeholder="Teléfono" required maxlength="25" /></label>
           </div>
-          <label><span>Email</span><input type="email" name="email" autocomplete="email" /></label>
+          <label><span>Email</span><input type="email" name="email" autocomplete="email" placeholder="Email" maxlength="100" /></label>
           <label><span>Tratamiento</span>
             <select name="tratamiento" required>
-              <option value="">Seleccioná una opción</option>
+              <option value="">Seleccioná un tratamiento</option>
               <option>Limpieza facial profunda</option>
               <option>Depilación definitiva</option>
               <option>Tratamiento antiage</option>
               <option>Estética corporal</option>
               <option>Peeling & renovación</option>
-              <option>Ritual relax</option>
             </select>
           </label>
           <div class="form-row">
-            <label><span>Fecha preferida</span><input type="date" name="fecha" required /></label>
-            <label><span>Horario preferido</span>
+            <label><span>Fecha</span><input type="date" name="fecha" required /></label>
+            <label><span>Horario</span>
               <select name="horario" required>
-                <option value="">Seleccioná</option>
-                <option>09:00 - 12:00</option>
-                <option>12:00 - 15:00</option>
-                <option>15:00 - 19:00</option>
+                <option value="">Seleccioná un horario</option>
+                <option>08:00</option><option>09:30</option><option>11:00</option><option>12:30</option><option>14:00</option><option>15:30</option><option>17:00</option><option>18:30</option>
               </select>
             </label>
           </div>
-          <label><span>Mensaje opcional</span><textarea name="mensaje" rows="3" placeholder="Contanos si tenés alguna consulta específica"></textarea></label>
-          <p class="form-status" data-form-status aria-live="polite"></p>
-          <button class="btn btn-primary" type="submit">Confirmar por WhatsApp</button>
+          <button class="btn btn-primary" type="submit">Confirmar turno</button>
+          <small>Te contactaremos por WhatsApp para confirmar la disponibilidad.</small>
         </form>
+      </div>
+    </section>
+
+    <section class="section contact-cta" id="contacto">
+      <div class="container contact-card reveal">
+        <div class="contact-content">
+          <p class="eyebrow">Consultas</p>
+          <h2>¿No sabés qué tratamiento elegir?</h2>
+          <p>Contanos qué buscás mejorar y te orientamos con una recomendación simple, clara y personalizada.</p>
+          <ul class="mini-checks" aria-label="Beneficios de la consulta">
+            <li>Diagnóstico inicial orientativo</li>
+            <li>Respuesta por WhatsApp</li>
+            <li>Sin compromiso</li>
+          </ul>
+        </div>
+        <div class="contact-panel">
+          <span class="contact-icon">💬</span>
+          <strong>Te ayudamos a elegir</strong>
+          <p>Facial, corporal, relax o depilación: encontrá el tratamiento ideal para vos.</p>
+          <div class="contact-actions">
+            <a class="btn btn-primary" href="https://wa.me/541127549094?text=Hola%20Aura%20Bella%2C%20quiero%20informaci%C3%B3n%20sobre%20tratamientos" target="_blank" rel="noopener noreferrer">Enviar WhatsApp</a>
+            <a class="btn btn-secondary" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a>
+          </div>
+        </div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer" id="contacto">
+  <footer class="site-footer">
     <div class="container footer-grid">
       <div class="footer-brand">
-        <img src="logo-aura-bella.svg" alt="Logo Aura Bella" width="64" height="64" />
-        <strong>Aura Bella</strong>
+        <img src="logo-aura-bella.svg" alt="Logo Aura Bella" class="footer-logo" />
         <p>Realzamos tu belleza natural con tratamientos personalizados y tecnología profesional.</p>
         <div class="social-links" aria-label="Redes sociales">
           <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">◎</a>
@@ -227,25 +304,32 @@
           <a href="https://wa.me/541127549094" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">☏</a>
         </div>
       </div>
+
       <div>
         <h3>Enlaces</h3>
-        <ul class="footer-links">
+        <ul class="footer-list">
           <li><a href="#inicio">Inicio</a></li>
           <li><a href="#servicios">Tratamientos</a></li>
-          <li><a href="#experiencia">Sobre nosotros</a></li>
+          <li><a href="#experiencia">Sobre nosotras</a></li>
           <li><a href="#testimonios">Opiniones</a></li>
+          <li><a href="#turnos">Turnos</a></li>
         </ul>
       </div>
+
       <div>
         <h3>Tratamientos</h3>
-        <ul class="footer-links">
-          <li>Faciales</li><li>Corporales</li><li>Láser</li><li>Radiofrecuencia</li>
+        <ul class="footer-list">
+          <li>Faciales</li>
+          <li>Corporales</li>
+          <li>Depilación definitiva</li>
+          <li>Radiofrecuencia</li>
         </ul>
       </div>
+
       <div>
         <h3>Contacto</h3>
-        <ul class="footer-contact">
-          <li>📍 Av. Siempre Viva 1234</li>
+        <ul class="footer-list footer-contact">
+          <li>📍 Buenos Aires, Argentina</li>
           <li>📞 +54 11 2754 9094</li>
           <li>✉️ hola@aurabella.com.ar</li>
           <li>🕘 Lun a Sáb · 9:00 a 19:00</li>
@@ -253,10 +337,14 @@
       </div>
     </div>
     <div class="container footer-bottom">
-      <p>© 2026 Aura Bella Estética Avanzada. Todos los derechos reservados.</p>
+      <p>© 2026 Aura Bella Estética Integral. Todos los derechos reservados.</p>
       <div><a href="#">Política de privacidad</a><span>|</span><a href="#">Términos y condiciones</a></div>
     </div>
   </footer>
+
+  <button class="lightbox" type="button" aria-label="Cerrar imagen ampliada" data-lightbox hidden>
+    <img src="" alt="Imagen ampliada de la galería" data-lightbox-img />
+  </button>
 
   <a class="whatsapp-float" href="https://wa.me/541127549094?text=Hola%20Aura%20Bella%2C%20quiero%20reservar%20un%20turno" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
     <span>☏</span>
